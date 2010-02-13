@@ -20,6 +20,7 @@
 
 
   <h4>Price history</h4>
+  <%= render_chart(investment.stocks) %>
   <ul>
   <% investment.stocks.each do |stock| %>
     <li>
