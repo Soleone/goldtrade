@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+gold_today:
+  name: gold
+  price: 102000
+
+gold_tomorrow:
+  name: gold
+  price: 120000

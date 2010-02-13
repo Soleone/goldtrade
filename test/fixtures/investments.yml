@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one_gold:
+  amount: 1
+  name: gold
+
+two_gold:
+  amount: 2
+  name: gold

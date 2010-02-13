@@ -1,0 +1,32 @@
+<div class="investment">
+  <h3>
+    <%=h investment.name %>
+  </h3>
+
+  <p>
+    Amount bought: <%=h investment.amount %> oz
+  </p>
+
+  <p>
+    <b>Total worth:</b>
+    $<%=h render_price(investment.amount * Stock.find_by_name(investment.name).price) %>
+  </p>
+
+  <h4>Price history</h4>
+  <ul>
+  <% investment.stocks.each do |stock| %>
+    <li>
+      $<%= render_price(stock.price) %>
+      <span class="note">
+        <%= stock.created_at.to_s(:short) %>
+      </span>
+    </li>
+  <% end %>
+  </ul>
+
+  <% if defined?(detailed) && detailed %>
+    <%= link_to 'Show', investment %> |
+    <%= link_to 'Edit', edit_investment_path(investment) %> |
+    <%= link_to 'Destroy', investment, :confirm => 'Are you sure?', :method => :delete %>
+  <% end %>
+</div>

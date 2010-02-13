@@ -1,0 +1,10 @@
+<h1>Listing investments</h1>
+
+
+<% @investments.each do |investment| %>
+  <%= render 'investment', :investment => investment, :detailed => true %>
+<% end %>
+
+<br />
+
+<%= link_to 'New investment', new_investment_path %>
