@@ -13,6 +13,11 @@ class Stock < ActiveRecord::Base
     end
   end
   
+  def self.current_price(name)
+    name ||= 'Gold'
+    YahooStock.get(ALL[name.downcase])
+  end
+  
   def symbol
     ALL[name.downcase].to_sym
   end

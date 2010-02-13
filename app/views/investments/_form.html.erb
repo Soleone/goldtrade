@@ -2,17 +2,15 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :name %><br />
     <%= f.select :name, options_for_select(Stock::ALL.map{|key, _| [key.capitalize, key.capitalize]}) %>
     <span class="note">
-      $<%= YahooStock.get %> / oz
+      $<%= render_price(Stock.current_price('Gold')) %> / oz
     </span>
   </p>
 
   <p>
-    <%= f.label :amount %><br />
-    <%= f.text_field :amount, :size => 4 %>
-    oz
+    <%= f.label :amount_in_dollars, "Amount to invest:" %><br />
+    $<%= f.text_field :amount_in_dollars, :size => 8 %>
   </p>
   <p>
     <%= f.submit investment.new_record? ? 'Buy' : 'Update' %>

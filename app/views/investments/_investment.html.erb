@@ -1,16 +1,23 @@
 <div class="investment">
   <h3>
-    <%=h investment.name %>
+    <% if defined?(detailed) && detailed %>
+      <%=h investment.name %>
+    <% else %>
+      <%= link_to investment.name, investment %>
+    <% end %>
   </h3>
 
+  <p>
+    <b>Total worth:</b>
+    $<%=h render_price(investment.amount * investment.current_price) %>
+    <span class="note">
+      ($<%= render_price(investment.current_price) %> / oz)
+    </span>
+  </p>
   <p>
     Amount bought: <%=h investment.amount %> oz
   </p>
 
-  <p>
-    <b>Total worth:</b>
-    $<%=h render_price(investment.amount * Stock.find_by_name(investment.name).price) %>
-  </p>
 
   <h4>Price history</h4>
   <ul>
@@ -25,8 +32,8 @@
   </ul>
 
   <% if defined?(detailed) && detailed %>
-    <%= link_to 'Show', investment %> |
     <%= link_to 'Edit', edit_investment_path(investment) %> |
-    <%= link_to 'Destroy', investment, :confirm => 'Are you sure?', :method => :delete %>
+    <%= link_to 'Delete', investment, :confirm => 'Are you sure?', :method => :delete %> |
+    <%= link_to 'Back', investments_path %>
   <% end %>
 </div>
