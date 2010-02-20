@@ -1,0 +1,110 @@
+body { 
+	background-color: #fff;
+	background-color: #c5d1c5;
+	color: #333;
+}
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+}
+
+h1 {
+	text-align: center;
+	font-size: 36px;	
+	color: #ddd;
+ 	text-shadow: #000 0.1em 0.1em 0.4em;
+}
+
+h2 {
+	text-align: center;
+	font-size: 24px;
+	margin: 0;
+}
+
+#header {
+}
+
+#main {
+	width: 500px;
+	margin: 0 auto;
+	padding: 8px;
+	background-color: #fff;
+	border: 8px solid #eee;
+}
+
+.investment {
+	padding: 8px;
+	background-color: #fff;
+}
+
+.investment h3, .investment h3 a {
+	color: #fff;
+	background-color: #6694a7;
+	padding: 4px;
+	text-decoration: none;
+}
+
+.investment h3 a:hover {
+	color: #bfbd8e;
+}
+
+.investment h4 {
+	color: #666;
+}
+
+.investment ul {
+	list-style: none;
+}
+
+.investment ul li .note {
+
+}
+
+.investment .amount {
+	margin-left: 16px;	
+}
+
+#investment_name {
+	font-size: 20px;
+	min-width: 140px;
+	margin-right: 8px;
+}
+
+#investment_amount_in_dollars {
+	font-size: 16px;
+	padding-left: 16px;
+	background: #fff url('/images/dollar_icon.jpg') no-repeat 2px left;
+}
+
+.price {
+	color: #080;
+}
+
+.note {
+	font-size: 11px;
+	font-style: italic;
+	color: #666;
+}
+
+
+/* Some custom colors to use throughout */
+.gold {
+	color: #bfbd8e;
+}
+.grey {
+	color: #c5d1c5;
+}
+.blue {
+	color: #6694a7;
+}
+.red {
+	color: #ab6565;
+}
+.darkred {
+	color: #7d504b;
+}
+.green {
+	color: #236638;
+}

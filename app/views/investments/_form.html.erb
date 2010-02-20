@@ -4,13 +4,13 @@
   <p>
     <%= f.select :name, options_for_select(Stock::ALL.map{|key, _| [key.capitalize, key.capitalize]}) %>
     <span class="note">
-      $<%= render_price(Stock.current_price('Gold')) %> / oz
+      <span class="price">$<%= render_price(Stock.current_price('Gold')) %></span> / oz
     </span>
   </p>
 
   <p>
-    <%= f.label :amount_in_dollars, "Amount to invest:" %><br />
-    $<%= f.text_field :amount_in_dollars, :size => 8 %>
+    <%= f.text_field :amount_in_dollars, :size => 8 %>
+    <%= f.label :amount_in_dollars, "Amount to invest", :class => 'note' %>
   </p>
   <p>
     <%= f.submit investment.new_record? ? 'Buy' : 'Update' %>

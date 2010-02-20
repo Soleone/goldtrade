@@ -9,13 +9,13 @@
 
   <p>
     <b>Total worth:</b>
-    $<%=h render_price(investment.amount * investment.current_price) %>
+    <span class="price">
+      $<%=h render_price(investment.amount * investment.current_price) %>
+    </span>
     <span class="note">
       ($<%= render_price(investment.current_price) %> / oz)
     </span>
-  </p>
-  <p>
-    Amount bought: <%=h investment.amount %> oz
+    <b class="amount">Amount bought:</b> <%=h investment.amount %> oz
   </p>
 
 
@@ -24,9 +24,12 @@
   <ul>
   <% investment.stocks.each do |stock| %>
     <li>
-      $<%= render_price(stock.price) %>
-      <span class="note">
+      <span class="note date">
         <%= stock.created_at.to_s(:short) %>
+      </span>
+      &mdash;
+      <span class="price">
+        $<%= render_price(stock.price) %>
       </span>
     </li>
   <% end %>
