@@ -1,10 +1,10 @@
 = Gold Trade
 
-Follow the stock price of gold to see what you've been missing.
+Simple Rails app that uses Yahoo Finance to follow the stock price of gold.
+You can make virtual investments and track the value over a course of time with a simple graph.
 
+The code is easily extendable to support other stocks as well, but gold was the most interesting at the time for me.
 
 == Demo
 
-Live application is running at:
-
-http://trade.heroku.com
+Live application is running at: http://trade.heroku.com
