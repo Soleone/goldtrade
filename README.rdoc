@@ -1,9 +1,9 @@
-== Gold Trade ==
+= Gold Trade
 
 Follow the stock price of gold to see what you've been missing.
 
 
-== Demo ==
+== Demo
 
 Live application is running at:
 
