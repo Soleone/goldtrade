@@ -1,0 +1,10 @@
+== Gold Trade ==
+
+Follow the stock price of gold to see what you've been missing.
+
+
+== Demo ==
+
+Live application is running at:
+
+http://trade.heroku.com
