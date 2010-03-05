@@ -19,6 +19,11 @@ class Investment < ActiveRecord::Base
     @current_price ||= Stock.current_price(name)
   end
   
+  def cache_key
+    stocks.size
+  end
+  
+  
   private
   
   def save_current_stock

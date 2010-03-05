@@ -1,5 +1,5 @@
 class InvestmentsController < ApplicationController
-  # GET /investments
+    # GET /investments
   # GET /investments.xml
   def index
     @investments = Investment.all
@@ -61,6 +61,7 @@ class InvestmentsController < ApplicationController
 
     respond_to do |format|
       if @investment.update_attributes(params[:investment])
+        expire_page :action => [:index, :show]
         flash[:notice] = 'Investment was successfully updated.'
         format.html { redirect_to(@investment) }
         format.xml  { head :ok }
