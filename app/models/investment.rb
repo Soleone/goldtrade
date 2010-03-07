@@ -12,17 +12,31 @@ class Investment < ActiveRecord::Base
   end
   
   def stocks
-    Stock.find_all_by_name(name)
+    @stocks ||= Stock.find_all_by_name(name)
   end
   
   def current_price
     @current_price ||= Stock.current_price(name)
   end
   
+  def original_price
+    @original_price ||= begin
+      original_stock = Stock.all.find{|s| s.created_at.to_date == created_at.to_date}
+      original_stock.price
+    end
+  end
+  
   def cache_key
     stocks.size
   end
   
+  def max
+    stocks.max{|a,b| a.price <=> b.price }
+  end
+
+  def min
+    stocks.min{|a,b| a.price <=> b.price }
+  end
   
   private
   

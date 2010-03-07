@@ -66,6 +66,25 @@ h2 {
 	margin-left: 16px;	
 }
 
+.investment .price-list {
+	float: left;
+	font-size: 11px;
+}
+
+.investment .stats {
+	margin-left: 260px;
+}
+
+.investment .stats .max {
+	color: green;
+	font-weight: bold;
+}
+
+.investment .stats .min {
+	color: red;
+}
+
+
 #investment_name {
 	font-size: 20px;
 	min-width: 140px;

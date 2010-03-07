@@ -23,7 +23,8 @@
   <% cache(investment.cache_key) do %>
     <%= render_chart(investment.stocks) %>
   <% end %>
-  <ul>
+  
+  <ul class="price-list">
   <% investment.stocks.each do |stock| %>
     <li>
       <span class="note date">
@@ -36,7 +37,40 @@
     </li>
   <% end %>
   </ul>
+  
+  <div class="stats">
+    <p>
+      <b>All time high:</b><br/>
+      <span class="max">
+        $<%=h render_price(investment.max.price) %>
+      </span>
+      <span class="note date">
+        <%= investment.max.created_at.to_s(:short) %>
+      </span>
+    </p>
+    <p>
+      <b>All time low:</b><br/>
+      <span class="min">
+        $<%=h render_price(investment.min.price) %>
+      </span>
+      <span class="note date">
+        <%= investment.min.created_at.to_s(:short) %>
+      </span>
+    </p>
+    <p>
+      <b>Price when you invested:</b><br/>
+      <span>
+        $<%=h render_price(investment.original_price) %>
+      </span>
+      <span class="note date">
+        <%= investment.created_at.to_s(:short) %>
+      </span>
+    </p>
 
+  </div>
+
+  <div style="clear: left;"></div>
+  
   <% if defined?(detailed) && detailed %>
     <%= link_to 'Edit', edit_investment_path(investment) %> |
     <%= link_to 'Delete', investment, :confirm => 'Are you sure?', :method => :delete %> |
